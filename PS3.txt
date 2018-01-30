@@ -1,0 +1,19 @@
+def get_word_score(word, n):
+    word=word.lower()
+    ltrs=list(word)
+    list2=[]
+    for i in ltrs:
+        if i in SCRABBLE_LETTER_VALUES:
+            value=SCRABBLE_LETTER_VALUES[i]
+            list2.append(value)
+    firstsum=sum(list2)
+
+    secondsum=7*len(word) - 3*(n-len(word))
+    if secondsum<=1:
+        secondsum=1
+    
+    totalsum=firstsum*secondsum
+    
+    return totalsum
+
+
