@@ -69,5 +69,30 @@ def update_hand(hand, word):
         else:
             updatedhand[i]=updatedhand.get(i,0)
     return updatedhand
-    
+
+def is_valid_word(word, hand, word_list):
+    """
+    Returns True if word is in the word_list and is entirely
+    composed of letters in the hand. Otherwise, returns False.
+    Does not mutate hand or word_list.
+   
+    word: string
+    hand: dictionary (string -> int)
+    word_list: list of lowercase strings
+    returns: boolean
+    """
+
+    lowercaseword=word.lower()
+    handcopy=hand.copy()
+    if lowercaseword in word_list:
+        emptyString=str()
+        for i in lowercaseword:
+            if i in handcopy and handcopy[i]>0:
+                emptyString+=i
+                handcopy[i]-=1
+            else:
+                emptyString
+        return emptyString==lowercaseword
+    else:
+        return False
 
