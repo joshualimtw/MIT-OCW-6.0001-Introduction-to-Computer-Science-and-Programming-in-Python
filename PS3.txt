@@ -24,7 +24,6 @@ def get_word_score(word, n):
     n: int >= 0
     returns: int >= 0
     """
-    
     word=word.lower()
     ltrs=list(word)
     list2=[]
